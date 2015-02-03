@@ -1,0 +1,28 @@
+/**
+ * Styles used across all experiments.
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  font-family: 'Georgia', 'serif';
+  font-weight: 200;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+.clear {
+  clear: both;
+}

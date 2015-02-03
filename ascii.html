@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ASCII Logo</title>
+  <link rel="stylesheet" href="all.css">
+  <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+  <style>
+    .ascii-page {
+      margin: 16px;
+    }
+    .ascii-box {
+      display: inline-block;
+      text-align: left;
+      font-family: 'Inconsolata', Courier, monospace;
+    }
+    .logo {
+      text-align: center;
+    }
+    .logo-1 {
+      line-height: 0.68;
+    }
+    .logo-2 {
+      line-height: 0.60;
+    }
+    .col-1, .col-2 {
+      width: 50%;
+      float: left;
+    }
+    @media screen and (max-width: 650px) {
+      .col-1, .col-2 {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body class="ascii-page">
+  <h1 class="title">ASCII Logo</h1>
+  <div class="col-1">
+    <h2>No Stroke</h2>
+    <div class="logo logo-1">
+      <pre class="ascii-box">
+               .
+             .'/
+  .--------.' /
+  |      .'  / \
+  |    .'   /
+  |  .'    /   /
+  '-'     '---'
+ .'
+'-----------------.
+                .'
+   _____      _'
+  '    /    ,'  \
+  |   /   ,'
+  |  /  ,'      /
+  '-/ ,'-------'
+   /,'
+   `
+      </pre>
+    </div>
+  </div>
+  <div class="col-2">
+    <h2 class="clear">Stroke</h2>
+    <div class="logo logo-2">
+      <pre class="ascii-box">
+                        ++
+                       ##
+                     '##'
+                    ####
+                  ;####'
+    +####################;
+    +##############+######'
+    +#;       +###`+##  :##
+    +#;     `###+  ##,   ##;
+    +#;    +###`  +##    +##
+    +#;  `###+    ##.    ##:
+    +#; +###.    +##    ###
+    +#;###+      #########
+    +####.      ########+
+    ###+
+  ;###,
+ ##############################
+#############################+
+                        '###:
+                      .###+
+    +##########      ####;
+    +#########;    #######;
+    +#;    +##   ;###.  `##
+    +#;    ##,  +##+     +#:
+    +#;   +##  ###;      +##
+    +#;  `##`+###        ##:
+    +#;  ######+       ,###
+    +#####################`
+    '###################;
+       '###,
+       ###
+      +#'
+      #
+      </pre>
+    </div>
+  </div>
+</body>
+</html>
