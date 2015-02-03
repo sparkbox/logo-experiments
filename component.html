@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Component Logo</title>
+  <link rel="stylesheet" type="text/css" href="all.css">
+  <style>
+    .subtitle {
+      text-align: center;
+      margin-bottom: 4em;
+    }
+    .block-title {
+      margin-top: 0;
+    }
+    .caption {
+      margin-top: 1em;
+      text-align: center;
+    }
+    .demo {
+      padding-left: 60px;
+    }
+    .el-source {
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .contents {
+      display: inline-block;
+      text-align: left;
+    }
+    .col-1, .col-2 {
+      width: 50%;
+      float: left;
+      text-align: center;
+    }
+    @media screen and (max-width: 650px) {
+      .col-1, .col-2 {
+        width: 100%;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var field = document.getElementById('field');
+      field.addEventListener('keyup', function(e) {
+        var value = field.value;
+        if (value === 'dark' || value === 'light') {
+          var component = document.querySelector('sparkbox-logo');
+          component.setAttribute("theme", value);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="wrapper clearfix">
+    <h1 class="title">Web Component Logo</h1>
+    <p class="subtitle">(best viewed in Chrome)</p>
+    <div class="col-1">
+      <div class="contents">
+        <sparkbox-logo theme="dark"></sparkbox-logo>
+        <pre class="el-source"><code>
+&lt;sparkbox-logo theme=&quot;dark&quot;&gt;
+        </code></pre>
+        <p class="caption">Go ahead. Inspect me.</p>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="contents">
+        <h2 class="block-title">Web Component Info</h2>
+        <pre><code>
+&lt;sparkbox-logo theme=&quot;dark&quot;&gt;&lt;/sparkbox-logo&gt;
+        </code></pre>
+        <p>Accepted values for 'theme':</p>
+        <ul>
+          <li>dark</li>
+          <li>light</li>
+        </ul>
+        <br />
+        <p>Try one: <code class="demo">theme="</code><input id="field" type="text" /><code>"</code></p>
+      </div>
+    </div>
+  </div>
+  <template>
+    <style type="text/css">
+      /* Border-box rules */
+      html {
+        box-sizing: border-box;
+      }
+
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+      /* Defines the "B" in the logo */
+      #sparkbox {
+        margin: 0 auto;
+        width: 186px;
+        height: 186px;
+        padding: 45px;
+        border-radius: 4px;
+        position: relative;
+      }
+
+      #sparkbox::before,
+      #sparkbox::after {
+        display: block;
+        height: 36px;
+        width: 100%;
+        border-width: 8px;
+        border-style: solid;
+        border-radius: 0 22px 22px 0;
+        content: '';
+      }
+      #sparkbox::before {
+        margin-bottom: 24px;
+      }
+
+      /* Defines the top of the lightning bolt */
+      .zig {
+        content: "";
+        position: absolute;
+        top: 18px;
+        left: 36px;
+        border-width: 79px 79px 0 0;
+        border-style: solid;
+        -webkit-transform: skewX(-26deg);
+        -moz-transform: skewX(-26deg);
+        transform: skewX(-26deg);
+      }
+      .zig::before {
+        content: "";
+        position: absolute;
+        top: -52px;
+        left: 24px;
+        border-width: 44px 44px 0 0;
+        border-style: solid;
+      }
+      .zig::after {
+        content: "";
+        position: absolute;
+        top: -16px;
+        left: 64px;
+        height: 8px;
+        width: 20px;
+        display: block;
+        -webkit-transform: skewX(26deg);
+        -moz-transform: skewX(26deg);
+        transform: skewX(26deg);
+      }
+
+      /* Defines the bottom of the lightning bolt */
+      .zag {
+        content: "";
+        position: absolute;
+        top: 89px;
+        left: 61px;
+        border-width: 0 0 79px 79px;
+        border-style: solid;
+        -webkit-transform: skewX(-26deg);
+        -moz-transform: skewX(-26deg);
+        transform: skewX(-26deg);
+      }
+      .zag::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: -68px;
+        border-width: 0 0 44px 44px;
+        border-style: solid;
+      }
+      .zag::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: -84px;
+        height: 8px;
+        width: 20px;
+        display: block;
+        -webkit-transform: skewX(26deg);
+        -moz-transform: skewX(26deg);
+        transform: skewX(26deg);
+      }
+
+      /* Themes */
+      .dark {
+        background-color: #252525;
+      }
+      .dark#sparkbox::before,
+      .dark#sparkbox::after {
+        border-color: #e3e3e3;
+      }
+      .dark .zig {
+        border-color: transparent #e3e3e3;
+      }
+      .dark .zig::before {
+        border-color: transparent #252525;
+      }
+      .dark .zig::after {
+        background-color: #252525;
+      }
+      .dark .zag {
+        border-color: transparent #e3e3e3;
+      }
+      .dark .zag::before {
+        border-color: transparent #252525;
+      }
+      .dark .zag::after {
+        background-color: #252525;
+      }
+
+      .light {
+        background-color: #e3e3e3;
+      }
+      .light#sparkbox::before,
+      .light#sparkbox::after {
+        border-color: #252525;
+      }
+      .light .zig {
+        border-color: transparent #252525;
+      }
+      .light .zig::before {
+        border-color: transparent #e3e3e3;
+      }
+      .light .zig::after {
+        background-color: #e3e3e3;
+      }
+      .light .zag {
+        border-color: transparent #252525;
+      }
+      .light .zag::before {
+        border-color: transparent #e3e3e3;
+      }
+      .light .zag::after {
+        background-color: #e3e3e3;
+      }
+    </style>
+
+    <div id="sparkbox" class="">
+      <div class="zig"></div>
+      <div class="zag"></div>
+    </div>
+  </template>
+
+  <script>
+    // Get the contents of our template.
+    var tmpl = document.querySelector('template');
+
+    // Create a prototype for a new element that extends HTMLElement.
+    var logoPrototype = Object.create(HTMLElement.prototype);
+
+    logoPrototype.updateTheme = function updateTheme(theme) {
+      var shdw = this.shadowRoot;
+      shdw.querySelector('#sparkbox').className = '';
+      shdw.querySelector('#sparkbox').classList.add(theme);
+    };
+
+    // Setup our Shadow DOM and clone the template
+    logoPrototype.createdCallback = function() {
+      var root = this.createShadowRoot();
+      root.appendChild(document.importNode(tmpl.content, true));
+    };
+
+    logoPrototype.attachedCallback = function() {
+      var theme = this.getAttribute('theme');
+      this.updateTheme(theme);
+    }
+
+    logoPrototype.attributeChangedCallback = function(name, oldVal, newVal) {
+      this.updateTheme(newVal);
+    }
+
+    // Register the new element.
+    var logo = document.registerElement('sparkbox-logo', {
+      prototype: logoPrototype
+    });
+  </script>
+</body>
+</html>
