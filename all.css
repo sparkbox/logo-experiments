@@ -25,6 +25,11 @@ h2 {
   font-size: 2em;
 }
 
+.caption {
+  margin-top: 1em;
+  text-align: center;
+}
+
 /* Defaults from html5 boilerplate */
 
 /*
