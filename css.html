@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pure CSS Logo</title>
+  <style>
+    /**
+     * Universal
+     */
+    html {
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      background-color: #e3e3e3;
+    }
+
+    /**
+     * Page-specific
+     */
+    .btn {
+      display: block;
+      width: 120px;
+      margin: 16px auto;
+    }
+
+    .title {
+      text-align: center;
+      font-family: 'Georgia', 'serif';
+      font-size: 3em;
+      font-weight: 200;
+    }
+
+    .css-page {
+      margin-top: 4em;
+    }
+
+    /* Defines the "B" in the logo */
+    .sparkbox {
+      width: 186px;
+      height: 186px;
+      margin: 2em auto 0;
+      padding: 45px;
+      background-color: #252525;
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .sparkbox::before,
+    .sparkbox::after {
+      display: block;
+      height: 36px;
+      width: 100%;
+      border: 8px solid #e3e3e3;
+      border-radius: 0 22px 22px 0;
+      content: '';
+    }
+    .sparkbox::before {
+      margin-bottom: 24px;
+    }
+
+    /* Defines the top of the lightning bolt */
+    .zig {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 36px;
+      border-width: 79px 79px 0 0;
+      border-style: solid;
+      border-color: transparent #e3e3e3;
+      -webkit-transform: skewX(-26deg);
+      -moz-transform: skewX(-26deg);
+      transform: skewX(-26deg);
+    }
+    .zig::before {
+      content: "";
+      position: absolute;
+      top: -52px;
+      left: 24px;
+      border-width: 44px 44px 0 0;
+      border-style: solid;
+      border-color: transparent #252525;
+    }
+    .zig::after {
+      content: "";
+      position: absolute;
+      top: -16px;
+      left: 64px;
+      height: 8px;
+      width: 20px;
+      display: block;
+      background-color: #252525;
+      -webkit-transform: skewX(26deg);
+      -moz-transform: skewX(26deg);
+      transform: skewX(26deg);
+    }
+
+    /* Defines the bottom of the lightning bolt */
+    .zag {
+      content: "";
+      position: absolute;
+      top: 89px;
+      left: 61px;
+      border-width: 0 0 79px 79px;
+      border-style: solid;
+      border-color: transparent #e3e3e3;
+      -webkit-transform: skewX(-26deg);
+      -moz-transform: skewX(-26deg);
+      transform: skewX(-26deg);
+    }
+    .zag::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: -68px;
+      border-width: 0 0 44px 44px;
+      border-style: solid;
+      border-color: transparent #252525;
+    }
+    .zag::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: -84px;
+      height: 8px;
+      width: 20px;
+      display: block;
+      background-color: #252525;
+      -webkit-transform: skewX(26deg);
+      -moz-transform: skewX(26deg);
+      transform: skewX(26deg);
+    }
+
+  </style>
+</head>
+<body class="css-page">
+  <h1 class="title">Pure CSS Logo</h1>
+  <!-- Todo: Add a button to toggle on the html structure -->
+  <!-- <button class="btn">Show Structure</button> -->
+  <div class="sparkbox dark">
+    <div class="zig"></div>
+    <div class="zag"></div>
+  </div>
+</body>
+</html>
