@@ -12,37 +12,27 @@
     .block-title {
       margin-top: 0;
     }
-    .demo {
-      padding-left: 60px;
-    }
     .el-source {
       font-weight: bold;
       font-size: 16px;
+      margin-bottom: 0;
     }
     .wrapper {
-      max-width: 900px;
+      max-width: 490px;
       margin: 0 auto;
     }
     .contents {
-      display: inline-block;
-      text-align: left;
-    }
-    .col-1, .col-2 {
-      width: 50%;
-      float: left;
       text-align: center;
     }
-    @media screen and (max-width: 650px) {
-      .col-1, .col-2 {
-        width: 100%;
-      }
+    .select {
+      min-width: 75px;
     }
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-      var field = document.getElementById('field');
-      field.addEventListener('keyup', function(e) {
-        var value = field.value;
+      var select = document.getElementById('select');
+      select.addEventListener('change', function(e) {
+        var value = select.value;
         if (value === 'dark' || value === 'light') {
           var component = document.querySelector('sparkbox-logo');
           component.setAttribute("theme", value);
@@ -55,29 +45,17 @@
   <div class="wrapper clearfix">
     <h1 class="title">Web Component Logo</h1>
     <p class="subtitle">(best viewed in Chrome)</p>
-    <div class="col-1">
-      <div class="contents">
-        <sparkbox-logo theme="dark"></sparkbox-logo>
-        <pre class="el-source"><code>
+    <div class="contents">
+      <sparkbox-logo theme="dark"></sparkbox-logo>
+      <pre class="el-source"><code>
 &lt;sparkbox-logo theme=&quot;dark&quot;&gt;
-        </code></pre>
-        <p class="caption">Go ahead. Inspect me.</p>
-      </div>
-    </div>
-    <div class="col-2">
-      <div class="contents">
-        <h2 class="block-title">Web Component Info</h2>
-        <pre><code>
-&lt;sparkbox-logo theme=&quot;dark&quot;&gt;&lt;/sparkbox-logo&gt;
-        </code></pre>
-        <p>Accepted values for 'theme':</p>
-        <ul>
-          <li>dark</li>
-          <li>light</li>
-        </ul>
-        <br />
-        <p>Try one: <code class="demo">theme="</code><input id="field" type="text" /><code>"</code></p>
-      </div>
+      </code></pre>
+      <code class="demo">theme="</code>
+      <select id="select" class="select">
+        <option value="dark">dark</option>
+        <option value="light">light</option>
+      </select>
+      <code>"</code>
     </div>
   </div>
   <template>
