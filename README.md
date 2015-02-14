@@ -1,5 +1,5 @@
 # Logo Experiments
-Every possible way to draw a logo, using modern frontend techniques. I'm using the [Sparkbox](http://seesparkbox.com/) logo.
+Every possible way to draw a logo, using modern frontend techniques. Using the [Sparkbox](http://seesparkbox.com/) logo.
 
 See them here: **http://bryanbraun.github.io/logo-experiments/**
 (best viewed in Chrome)
