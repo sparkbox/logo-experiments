@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Clipping Logo</title>
+  <link rel="stylesheet" href="all.css">
+  <style>
+    .clip-page {
+      text-align: center;
+    }
+    .iframe {
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body class="clip-page">
+  <h1 class="title">CSS Masking Logo</h1>
+  <!-- We bring in the clipped image via iframe to work around clipPath centering and positioning issues. For more information, see: http://sarasoueidan.com/blog/css-svg-clipping/#clippathunits.  -->
+  <iframe class="iframe" width="400" height="400" src="clipping-iframed.html" frameborder="0" scrolling="no"></iframe>
+  <p class="caption">Go ahead. Inspect me.</p>
+</body>
+</html>

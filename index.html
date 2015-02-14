@@ -24,9 +24,18 @@
       -webkit-align-content: flex-end;
       align-content: flex-end;
     }
+    .gallery > a {
+      margin: 30px 16px 16px;
+      font-size: 18px;
+      text-decoration: none;
+      color: #252525;
+    }
     .gallery img {
-      margin: 36px 16px 16px;
       border: 1px solid #cccccc;
+    }
+    .label {
+      text-align: center;
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -36,14 +45,14 @@
     <p>Goal: Demonstrate every possible way to draw a logo with modern front-end techniques.</p>
   </header>
   <section class="gallery">
-    <a href="css.html" title="Pure CSS Logo"><img src="images/css-logo.png" alt="Logo in Pure CSS"></a>
-    <a href="ascii.html" title="ASCII Logo"><img src="images/ascii-logo.png" alt="Logo in ASCII Characters"></a>
-    <a href="component.html" title="Web Component Logo"><img src="images/component-logo.png" alt="Logo in a Web Component"></a>
-    <a href="svg.html" title="SVG Logo"><img src="images/svg-logo.png" alt="Logo in SVG"></a>
-    <a href="canvas.html" title="Canvas Logo"><img src="images/canvas-logo.png" alt="Logo in Canvas"></a>
-    <a href="icon-font.html" title="Icon Font Logo"><img src="images/icon-font-logo.png" alt="Logo in an Icon Font"></a>
-    <a href="webgl.html" title="WebGL Logo"><img src="images/webgl-logo.png" alt="Logo in WebGL"></a>
-    <img src="images/placeholder.png" title="More Coming Soon..." alt="More Coming Soon...">
+    <a href="css.html" title="Pure CSS Logo"><div class="label">Pure CSS</div><img src="images/css-logo.png" alt="Logo in Pure CSS"></a>
+    <a href="svg.html" title="SVG Logo"><div class="label">SVG</div><img src="images/svg-logo.png" alt="Logo in SVG"></a>
+    <a href="component.html" title="Web Component Logo"><div class="label">Web Component</div><img src="images/component-logo.png" alt="Logo in a Web Component"></a>
+    <a href="icon-font.html" title="Icon Font Logo"><div class="label">Icon Font</div><img src="images/icon-font-logo.png" alt="Logo in an Icon Font"></a>
+    <a href="webgl.html" title="WebGL Logo"><div class="label">WebGL</div><img src="images/webgl-logo.png" alt="Logo in WebGL"></a>
+    <a href="ascii.html" title="ASCII Logo"><div class="label">ASCII</div><img src="images/ascii-logo.png" alt="Logo in ASCII Characters"></a>
+    <a href="clipping.html" title="CSS Clipping Logo"><div class="label">CSS Clipping</div><img src="images/clipping-logo.png" alt="Logo Using CSS Clipping"></a>
+    <a href="canvas.html" title="Canvas Logo"><div class="label">Canvas</div><img src="images/canvas-logo.png" alt="Logo in Canvas"></a>
   </section>
   <a href="https://github.com/bryanbraun/logo-experiments"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 </body>
