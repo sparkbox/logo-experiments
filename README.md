@@ -1,14 +1,14 @@
 # Logo Experiments
-Every possible way to draw a logo, using modern frontend techniques. Using the [Sparkbox](http://seesparkbox.com/) logo.
+Every possible way to draw the [Sparkbox](http://seesparkbox.com) logo, using modern frontend techniques.
 
-See them here: **http://bryanbraun.github.io/logo-experiments/**
+See them here: **http://sparkbox.github.io/logo-experiments/**
 (best viewed in Chrome)
 
 ![The Logo Experiments Gallery](images/logo-experiments.png)
 
 ## Thanks
 
-Several of these techniques are fairly new and lack documentation. I wouldn't have been able to do them without a few key online tutorials. Special thanks goes to:
+Special thanks goes to a few good citizens who pioneered (and documented) some of these techniques:
 
 * [Greg Tavares](https://github.com/greggman), for his WebGL [code](https://github.com/greggman/webgl-fundamentals/blob/master/webgl/webgl-2d-image.html) & [tutorials](http://webglfundamentals.org/webgl/lessons/webgl-image-processing.html).
 * [Mark Dalgleish](https://twitter.com/markdalgleish), for a [key post](http://markdalgleish.com/2013/11/web-components-why-youre-already-an-expert/) on Web Components that filled in the gaps.
