@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>WebVR Logo</title>
+    <link rel="stylesheet" href="all.css">
+    <style>
+      #world {
+        position: absolute;
+        width:100%;
+        height: 100%;
+        overflow: hidden;
+        background: -webkit-linear-gradient(#2a3340, #172533);
+        background: -o-linear-gradient(#2a3340, #172533);
+        background: linear-gradient(#2a3340, #172533);
+      }
+    </style>
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- A camera  -->
+      <a-camera id="camera" position="0 0 20"></a-camera>
+
+      <!-- 1st -->
+      <a-box
+        width="8"
+        depth="8"
+        height="3"
+        position="0 -8.5 0"
+        color="brown">
+      </a-box>
+
+      <!-- 2nd -->
+      <a-box
+        width="8"
+        depth="8"
+        height="2"
+        position="-8 -9 0"
+        color="brown">
+      </a-box>
+
+      <!-- 3rd -->
+      <a-box
+        width="8"
+        depth="8"
+        height="1"
+        position="8 -9.5 0"
+        color="brown">
+      </a-box>
+
+      <!-- floor -->
+      <a-box width="100" depth="100" height="2" color="#404040" position="0 -11 0"></a-box>
+
+      <!-- our logo -->
+      <a-assets>
+        <a-asset-item id="sparkbox" src="webgl/3d-logo.dae"></a-asset-item>
+      </a-assets>
+      <a-entity collada-model="#sparkbox">
+        <a-animation
+          attribute="rotation"
+          from="70 2 0"
+          to="70 360 0"
+          easing="linear"
+          dur="6500"
+          repeat="indefinite"
+          fill="forwards"
+          direction="normal">
+        </a-animation>
+      </a-entity>
+
+      <a-sky color="#4d2149"></a-sky>
+    </a-scene>
+  </body>
+</html>
