@@ -4,13 +4,16 @@
   <meta charset="UTF-8">
   <title>CSS Clipping Logo - Iframed</title>
   <style>
+    .night-wrapper {
+      position: relative;
+      -webkit-clip-path: url(#svgPath);
+      -moz-clip-path: url(#svgPath);
+      clip-path: url(#svgPath);
+    }
     .night-image {
       position: absolute;
       top: 0;
       left: 0px;
-      -webkit-clip-path: url(#svgPath);
-      -moz-clip-path: url(#svgPath);
-      clip-path: url(#svgPath);
       -webkit-animation: moveX 6.8s alternate infinite cubic-bezier(0.445, 0.05, 0.55, 0.95), moveY 5.5s alternate infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
       -moz-animation: moveX 6.8s alternate infinite cubic-bezier(0.445, 0.05, 0.55, 0.95), moveY 5.5s alternate infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
       -ms-animation: moveX 6.8s alternate infinite cubic-bezier(0.445, 0.05, 0.55, 0.95), moveY 5.5s alternate infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -34,7 +37,9 @@
   </style>
 </head>
 <body>
-  <img class="night-image" src="images/night-milky-way.jpg" alt="The Milky Way at night."/>
+  <div class="night-wrapper">
+    <img class="night-image" src="images/night-milky-way.jpg" alt="The Milky Way at night."/>
+  </div>
 
   <svg height="0" width="0">
     <defs>
