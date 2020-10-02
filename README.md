@@ -6,6 +6,10 @@ See them here: **http://sparkbox.github.io/logo-experiments/**
 
 ![The Logo Experiments Gallery](images/logo-experiments.png)
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Thanks
 
 Special thanks goes to a few good citizens who pioneered (and documented) some of these techniques:

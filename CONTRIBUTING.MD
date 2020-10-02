@@ -6,29 +6,22 @@
 - Clone/Fork the repo.
 - Make the required changes.
 - Push changes in your branch.
-- Make a Pull request ,you can refer to video [Submit A Pull Request](https://www.youtube.com/watch?v=rgbCcBNZcdQ).
+- Make a Pull request (you can refer to the video [Submit A Pull Request](https://www.youtube.com/watch?v=rgbCcBNZcdQ) for details).
 
 ## Commit Style
 
-- We use Conventional Commits and Standard Version to automate versioning of this package. 
-- Commit messages must be short and descriptive enough to describe purpose of branch/pull request.
+- Follow the guidelines from [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+- Commit messages should be short and descriptive.
 
-Example-
+**Example**
 
-If you worked on adding a light theme for web component logo.
+If you worked on adding a light theme for web component logo:
 
 ```sh
-git commit -am "light_theme_web_component"
+git commit -am "feat: add a light_theme Web Component"
 ```
-
 
 ## Contributing
 
 - Add new HTML and CSS files with descriptive names (if required) on main project folder.
 - You can edit files for enhancements and solving issues.
-- For best viewing experience of your work , Chrome browser is recommended.
-
-
-
-
-
