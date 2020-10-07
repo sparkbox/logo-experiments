@@ -27,38 +27,23 @@
     .select {
       min-width: 75px;
     }
+    .caption {
+      margin-top: 1em;
+    }
   </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-      var select = document.getElementById('select');
-      select.addEventListener('change', function(e) {
-        var value = select.value;
-        if (value === 'dark' || value === 'light') {
-          var component = document.querySelector('sparkbox-logo');
-          component.setAttribute("theme", value);
-        }
-      });
-    });
-  </script>
 </head>
 <body>
   <div class="wrapper clearfix">
     <h1 class="title">Web Component Logo</h1>
     <p class="subtitle">(best viewed in Chrome)</p>
     <div class="contents">
-      <sparkbox-logo theme="dark"></sparkbox-logo>
-      <pre class="el-source"><code>
-&lt;sparkbox-logo theme=&quot;dark&quot;&gt;
-      </code></pre>
-      <code class="demo">theme="</code>
-      <select id="select" class="select">
-        <option value="dark">dark</option>
-        <option value="light">light</option>
-      </select>
-      <code>"</code>
+      <sparkbox-logo theme="light"></sparkbox-logo>
+      <p class="caption">Go ahead. Inspect me.</p>
     </div>
   </div>
-  <template>
+  <script>
+    const template = document.createElement('template');
+    template.innerHTML = `
     <style type="text/css">
       /* Border-box rules */
       html {
@@ -70,6 +55,7 @@
       }
 
       /* Defines the "B" in the logo */
+
       #sparkbox {
         margin: 0 auto;
         width: 186px;
@@ -77,6 +63,7 @@
         padding: 45px;
         border-radius: 4px;
         position: relative;
+        background-color: #e3e3e3;
       }
 
       #sparkbox::before,
@@ -160,55 +147,28 @@
       }
 
       /* Themes */
-      .dark {
-        background-color: #252525;
-      }
-      .dark#sparkbox::before,
-      .dark#sparkbox::after {
-        border-color: #e3e3e3;
-      }
-      .dark .zig {
-        border-color: transparent #e3e3e3;
-      }
-      .dark .zig::before {
-        border-color: transparent #252525;
-      }
-      .dark .zig::after {
-        background-color: #252525;
-      }
-      .dark .zag {
-        border-color: transparent #e3e3e3;
-      }
-      .dark .zag::before {
-        border-color: transparent #252525;
-      }
-      .dark .zag::after {
-        background-color: #252525;
-      }
 
-      .light {
-        background-color: #e3e3e3;
-      }
-      .light#sparkbox::before,
-      .light#sparkbox::after {
+
+      #sparkbox::before,
+      #sparkbox::after {
         border-color: #252525;
       }
-      .light .zig {
+      .zig {
         border-color: transparent #252525;
       }
-      .light .zig::before {
+      .zig::before {
         border-color: transparent #e3e3e3;
       }
-      .light .zig::after {
+      .zig::after {
         background-color: #e3e3e3;
       }
-      .light .zag {
+      .zag {
         border-color: transparent #252525;
       }
-      .light .zag::before {
+      .zag::before {
         border-color: transparent #e3e3e3;
       }
-      .light .zag::after {
+      .zag::after {
         background-color: #e3e3e3;
       }
     </style>
@@ -217,40 +177,18 @@
       <div class="zig"></div>
       <div class="zag"></div>
     </div>
-  </template>
+    `;
 
-  <script>
-    // Get the contents of our template.
-    var tmpl = document.querySelector('template');
-
-    // Create a prototype for a new element that extends HTMLElement.
-    var logoPrototype = Object.create(HTMLElement.prototype);
-
-    logoPrototype.updateTheme = function updateTheme(theme) {
-      var shdw = this.shadowRoot;
-      shdw.querySelector('#sparkbox').className = '';
-      shdw.querySelector('#sparkbox').classList.add(theme);
-    };
-
-    // Setup our Shadow DOM and clone the template
-    logoPrototype.createdCallback = function() {
-      var root = this.createShadowRoot();
-      root.appendChild(document.importNode(tmpl.content, true));
-    };
-
-    logoPrototype.attachedCallback = function() {
-      var theme = this.getAttribute('theme');
-      this.updateTheme(theme);
+    class Logo extends HTMLElement {
+      constructor(){
+        super(); 
+        // Create Shadow Root
+        var shadow = this.attachShadow({mode: 'open'});
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
+      }
     }
-
-    logoPrototype.attributeChangedCallback = function(name, oldVal, newVal) {
-      this.updateTheme(newVal);
-    }
-
     // Register the new element.
-    var logo = document.registerElement('sparkbox-logo', {
-      prototype: logoPrototype
-    });
+    var logo = window.customElements.define('sparkbox-logo', Logo);
   </script>
 </body>
 </html>
